@@ -1,25 +1,7 @@
 import React from "react";
+import { Menu, Review, RestaurantType }  from "../types/types"
 
-interface Menu {
-  id: string;
-  name: string;
-  price?: number;
-  ingredients?: Array<string>;
-}
 
-interface Review {
-    id: string;
-    user: string;
-    text: string;
-    rating: number;
-}
-
-interface RestaurantType {
-  id: string;
-  name: string;
-  menu?: Array<Menu>;
-  reviews?: Array<Review>;
-}
 
 const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) => {
     return (
@@ -32,7 +14,7 @@ const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) =>
                 Меню: 
           </h3>
 
-            {restaurant.menu && (
+            {restaurant.menu ? (
                 <ul>
                     {restaurant.menu.map(item => (
                         <li key={item.id}>
@@ -43,14 +25,16 @@ const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) =>
                         </li>
                     ))}
                 </ul>
+            ):(
+                <p>Меню временно отсутствует</p>
             )}
-            {!restaurant.menu && <p>Меню временно отсутствует</p>}
+
 
           <h3 style={{ margin: '0 0 10px 0', color: '#333' }}>
                 Отзывы: 
           </h3>
 
-            {restaurant.reviews && (
+            {restaurant.reviews? (
                 <ul>
                     {restaurant.reviews.map(item => (
                         <li key={item.id}>
@@ -58,9 +42,9 @@ const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) =>
                         </li>
                     ))}
                 </ul>
+            ):(
+                <p>Отзывы временно отсутствуют</p>
             )}
-            {!restaurant.reviews && <p>Отзывы временно отсутствуют</p>}
-
         </div>
     )
 }
