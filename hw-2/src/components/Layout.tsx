@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <main>
       <header>header</header>

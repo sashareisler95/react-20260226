@@ -1,18 +1,13 @@
-import { useState } from "react";
+import { useCounter } from "../hooks/useCounter";
 
-const useCounter = (min: number = 0, max: number = 5, initialValue: number = 5) => {
-  const [count, setCount] = useState(initialValue);
 
-  return {
-    value: count,
-    increment: () => setCount(prev => prev < max? prev + 1 : prev),
-    decrement: () => setCount(prev => prev > min? prev - 1 : prev),
-    isMax: count >= max,
-    isMin: count <= min
-  };
-};
+interface CounterProps {
+  min?: number;
+  max?: number;
+  initialValue?: number;
+}
 
-export const Counter = ({min = 0, max = 5, initialValue = 5}) => {
+export const Counter = ({min = 0, max = 5, initialValue = 5}: CounterProps) => {
     const { value, decrement, increment, isMax, isMin } = useCounter(min, max, initialValue);
     return (
       <div>
