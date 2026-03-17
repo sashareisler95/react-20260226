@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantList from "./RestaurantList";
-import { Layout } from "./Layout";
+import { Layout } from "./utils/Layout";
 
 const RestaurantPage: React.FC = () => {
     return (

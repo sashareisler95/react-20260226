@@ -1,10 +1,22 @@
-import React from "react";
-import { Counter } from "./Counter";
-import { RestaurantType }  from "../types/types"
+import React, { useState } from "react";
+import { Counter } from "./utils/Counter";
+import { RestaurantType, ReviewType  }  from "../types/types"
+import ReviewForm from "./ReviewForm"
 
 
 
 const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) => {
+
+    const [reviews, setReviews] = useState(restaurant.reviews || []);
+
+    const handleAddReview = (newReview: Omit<ReviewType, 'id'>) => {const reviewWithId = {
+            ...newReview,
+            id: Date.now().toString()
+        };
+        setReviews([...reviews, reviewWithId]);
+    };
+
+
     return (
         <section>
           <h2 style={{
@@ -68,6 +80,7 @@ const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) =>
             ):(
                 <p>Reviews are temporarily unavailable</p>
             )}
+            <ReviewForm onAddReview={handleAddReview} />
         </section>
     )
 }

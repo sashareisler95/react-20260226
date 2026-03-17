@@ -6,7 +6,7 @@ export interface Menu {
   count?: number;
 }
 
-export interface Review {
+export interface ReviewType {
     id: string;
     user: string;
     text: string;
@@ -17,7 +17,7 @@ export interface RestaurantType {
   id: string;
   name: string;
   menu?: Array<Menu>;
-  reviews?: Array<Review>;
+  reviews?: Array<ReviewType>;
 }
 
 export interface RestaurantTabProps {

@@ -3,7 +3,7 @@ import Restaurant from "./RestaurantCard";
 import { restaurants } from "../mock";
 import RestaurantTab from "./RestTabs";
 import { RestaurantType } from "../types/types";
-import { Carousel } from "./Carousel";
+import { Carousel } from "./utils/Carousel";
 
 const RestaurantList: React.FC = () => {
     const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantType>(restaurants[0]);

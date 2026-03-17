@@ -23,7 +23,7 @@ const RestaurantTabs: React.FC<RestaurantTabProps> = ({ restaurant, isActive, on
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 textAlign: 'left',
-                fontFamily: 'inherit'
+                fontFamily: 'MyRestaurantFont'
             }}
         >
             <div style={{
