@@ -1,53 +1,81 @@
-import React from "react";
-import { Menu, Review, RestaurantType }  from "../types/types"
+import React, { useState } from "react";
+import { Counter } from "./utils/Counter";
+import { RestaurantType, ReviewType } from "../types/types";
+import ReviewForm from "./ReviewForm";
+import "../styles/Restaurant.css";
 
+const Restaurant: React.FC<{ 
+    restaurant: RestaurantType;
+    onAddReview: (review: Omit<ReviewType, 'id'>) => void;
+    }> = ({ restaurant, onAddReview }) => {
 
+    const [quantities, setQuantities] = useState<Map<string, number>>(new Map());
 
-const Restaurant: React.FC<{ restaurant: RestaurantType }> = ({ restaurant }) => {
+    const handleQuantityChange = (itemId: string, newQty: number) => {
+        setQuantities(prev => {
+            const next = new Map(prev);
+            next.set(itemId, newQty);
+            return next;
+        });
+    };
+
+    const reviews = restaurant.reviews || [];
+
     return (
-        <div>
-          <h2 style={{ margin: '0 0 10px 0', color: '#333' }}>
+        <section className="restaurant-section">
+            <h2 className="restaurant-name">
                 {restaurant.name}
-          </h2>
+            </h2>
 
-          <h3 style={{ margin: '0 0 10px 0', color: '#333' }}>
-                Меню: 
-          </h3>
+            <h3 className="section-title">
+                Menu:
+            </h3>
 
             {restaurant.menu ? (
-                <ul>
+                <ul className="menu-list">
                     {restaurant.menu.map(item => (
-                        <li key={item.id}>
-                            {item.name } {item.price && `- ${item.price}$`}
-                            {item.ingredients && (
-                              <small> ({item.ingredients.join(', ')})</small>
-                            )}
+                        <li key={item.id} className="menu-item">
+                            <span>
+                                {item.name} 
+                                {item.price && <span className="price"> - {item.price}$</span>}
+                                {item.ingredients && (
+                                    <span className="ingredients"> ({item.ingredients.join(', ')})</span>
+                                )}
+                            </span>
+                            <Counter
+                                value={quantities.get(item.id) ?? 5}
+                                min={1}
+                                max={5}
+                                onValueChange={(newQty) => handleQuantityChange(item.id, newQty)}
+                            />
                         </li>
                     ))}
                 </ul>
-            ):(
-                <p>Меню временно отсутствует</p>
+            ) : (
+                <p className="menu-unavailable">Menu is temporarily unavailable</p>
             )}
 
+            <h3 className="section-title">
+                Reviews:
+            </h3>
 
-          <h3 style={{ margin: '0 0 10px 0', color: '#333' }}>
-                Отзывы: 
-          </h3>
-
-            {restaurant.reviews? (
-                <ul>
-                    {restaurant.reviews.map(item => (
-                        <li key={item.id}>
-                            {item.user} {item.text && `- ${item.text}`} {item.rating && `${item.rating} 🌟`}
+            {reviews.length > 0 ? (
+                <ul className="reviews-list">
+                    {reviews.map(item => (
+                        <li key={item.id} className="review-item">
+                            <strong>{item.user}</strong> 
+                            {item.text && <span> - {item.text}</span>} 
+                            {item.rating && <span> {item.rating} ⭐</span>}
                         </li>
                     ))}
                 </ul>
-            ):(
-                <p>Отзывы временно отсутствуют</p>
+            ) : (
+                <p className="no-reviews">No reviews yet</p>
             )}
-        </div>
-    )
-}
+
+            <ReviewForm onAddReview={onAddReview} />
+        </section>
+    );
+};
 
 export default Restaurant;
-

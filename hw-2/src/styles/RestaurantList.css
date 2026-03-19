@@ -1,0 +1,16 @@
+.restaurant-list__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.restaurant-list__tab-wrapper {
+    flex-shrink: 0;
+}
+
+.restaurant-list__card-container {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}

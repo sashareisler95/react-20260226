@@ -1,0 +1,87 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.review-form__title {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-family: 'MyRestaurantFont';
+}
+
+.review-form__input,
+.review-form__textarea {
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    font-family: 'MyRestaurantFont';
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.review-form__input:focus,
+.review-form__textarea:focus {
+    border-color: #333;
+}
+
+.review-form__textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.review-form__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    background-color: white;
+    width: fit-content;
+}
+
+.review-form__rating-label {
+    font-weight: bold;
+    color: #333;
+    font-family: 'MyRestaurantFont';
+}
+
+.review-form__buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review-form__button {
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    font-family: 'MyRestaurantFont';
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.review-form__button--primary {
+    background-color: black;
+    color: white;
+}
+
+.review-form__button--primary:hover {
+    background-color: #333;
+}
+
+.review-form__button--secondary {
+    background-color: white;
+    color: black;
+}
+
+.review-form__button--secondary:hover {
+    background-color: #f0f0f0;
+}

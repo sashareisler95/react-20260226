@@ -3,9 +3,10 @@ export interface Menu {
   name: string;
   price?: number;
   ingredients?: Array<string>;
+  count?: number;
 }
 
-export interface Review {
+export interface ReviewType {
     id: string;
     user: string;
     text: string;
@@ -16,5 +17,11 @@ export interface RestaurantType {
   id: string;
   name: string;
   menu?: Array<Menu>;
-  reviews?: Array<Review>;
+  reviews?: Array<ReviewType>;
+}
+
+export interface RestaurantTabProps {
+    restaurant: RestaurantType;
+    isActive: boolean;
+    onClick: () => void;
 }
