@@ -1,0 +1,69 @@
+.restaurant-tab {
+    min-width: 200px;
+    height: 120px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    font-family: 'MyRestaurantFont';
+    position: relative;
+}
+
+.restaurant-tab--active {
+    background-color: black;
+    color: white;
+    border: 2px solid gray;
+    box-shadow: 0 4px 10px rgba(40, 43, 46, 0.23);
+    transform: scale(1.02);
+}
+
+.restaurant-tab:not(.restaurant-tab--active):hover {
+    background-color: #e9ecef;
+}
+
+.restaurant-tab__name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.restaurant-tab__info {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.restaurant-tab--active .restaurant-tab__info {
+    color: #e0e0e0;
+}
+
+.restaurant-tab__info-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.restaurant-tab__indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    border: 2px solid white;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../../styles/ScrollProgressBar.css";
 
 interface ScrollProgressBarProps {
   color?: string;
@@ -41,23 +42,17 @@ export const ScrollProgressBar: React.FC<ScrollProgressBarProps> = ({
 
   return (
     <div
+      className="scroll-progress-bar"
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
         height: `${height}px`,
-        backgroundColor: "transparent",
-        zIndex,
-        pointerEvents: "none"
+        zIndex
       }}
     >
       <div
+        className="scroll-progress-bar__fill"
         style={{
-          height: "100%",
           width: `${scrollProgress}%`,
           backgroundColor: color,
-          transition: "width 0.1s ease-out",
           borderRadius: `0 0 ${height}px ${height}px`
         }}
       />

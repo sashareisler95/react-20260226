@@ -1,0 +1,68 @@
+.restaurant-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'MyRestaurantFont', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.restaurant-name {
+    margin: 0 0 10px 0;
+    color: #333;
+    padding: 0 20px 0 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.section-title {
+    margin: 20px 0 0 10px;
+    color: #333;
+    padding: 10px 0 0 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.menu-list {
+    margin: 0 0 0 10px;
+    color: #333;
+    padding: 0 0 0 10px;
+    list-style-type: none;
+}
+
+.menu-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reviews-list {
+    margin: 0 0 0 10px;
+    color: #333;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.review-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-unavailable,
+.no-reviews {
+    margin: 10px 0 0 20px;
+    color: #999;
+    font-style: italic;
+}
+
+.ingredients {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.price {
+    font-weight: bold;
+    color: #2c3e50;
+}
