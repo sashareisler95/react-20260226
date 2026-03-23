@@ -1,0 +1,110 @@
+.login-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'MyRestaurantFont';
+    font-weight: bold;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 300px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+    margin: 0 0 20px 0;
+    color: var(--text-color);
+    font-family: 'MyRestaurantFont';
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-family: 'MyRestaurantFont';
+    font-size: 14px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.modal-button {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    font-family: 'MyRestaurantFont';
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.modal-button--cancel {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.modal-button--cancel:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.modal-button--confirm {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+.modal-button--confirm:hover:not(:disabled) {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.modal-button--confirm:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

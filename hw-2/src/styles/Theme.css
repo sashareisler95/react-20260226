@@ -1,0 +1,13 @@
+.theme-light {
+    --bg-color: #eeeeee;
+    --text-color: #000000;
+    --border-color: #cccccc;
+    --card-bg: #ffffff;
+}
+
+.theme-dark {
+    --bg-color: #222222;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --card-bg: #333333;
+}
