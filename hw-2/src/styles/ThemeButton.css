@@ -1,0 +1,17 @@
+.theme-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'MyRestaurantFont';
+    font-weight: bold;
+}
+
+.theme-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}

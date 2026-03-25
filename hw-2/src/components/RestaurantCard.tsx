@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Counter } from "./utils/Counter";
 import { RestaurantType, ReviewType } from "../types/types";
 import ReviewForm from "./ReviewForm";
+import { useAuth } from "./SwitchUserContext/hooks";
 import "../styles/Restaurant.css";
 
 const Restaurant: React.FC<{ 
@@ -10,6 +11,7 @@ const Restaurant: React.FC<{
     }> = ({ restaurant, onAddReview }) => {
 
     const [quantities, setQuantities] = useState<Map<string, number>>(new Map());
+    const { isAuthenticated } = useAuth();
 
     const handleQuantityChange = (itemId: string, newQty: number) => {
         setQuantities(prev => {
@@ -42,12 +44,14 @@ const Restaurant: React.FC<{
                                     <span className="ingredients"> ({item.ingredients.join(', ')})</span>
                                 )}
                             </span>
-                            <Counter
-                                value={quantities.get(item.id) ?? 5}
-                                min={1}
-                                max={5}
-                                onValueChange={(newQty) => handleQuantityChange(item.id, newQty)}
-                            />
+                            {isAuthenticated && (
+                                <Counter
+                                    value={quantities.get(item.id) ?? 5}
+                                    min={1}
+                                    max={5}
+                                    onValueChange={(newQty) => handleQuantityChange(item.id, newQty)}
+                                />
+                            )}
                         </li>
                     ))}
                 </ul>
