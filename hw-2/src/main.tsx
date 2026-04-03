@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider as ReduxProvider } from "react-redux";
-
-import RestaurantPage from "./components/RestaurantPage";
+import { BrowserRouter } from "react-router";
+import App from "./App";
 import { store } from "./app/store";
 
 import "./fonts/fonts.css";
@@ -13,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <RestaurantPage />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </ReduxProvider>
   </React.StrictMode>
 );

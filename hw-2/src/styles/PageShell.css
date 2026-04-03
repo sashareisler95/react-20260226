@@ -1,0 +1,90 @@
+.page {
+  padding: 24px;
+}
+
+.page__card {
+  max-width: 820px;
+  margin: 0 auto;
+
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+
+  padding: 20px;
+}
+
+.page__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-bottom: 14px;
+}
+
+.page__back {
+  text-decoration: none;
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.page__back:hover {
+  background: color-mix(in srgb, var(--text-color) 8%, transparent);
+  transform: translateY(-1px);
+}
+
+.page__back:active {
+  transform: translateY(0);
+}
+
+.page__title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.page__subtitle {
+  margin: 6px 0 0;
+  opacity: 0.8;
+}
+
+.page__list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.page__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.page__link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.page__link:hover {
+  text-decoration: underline;
+}
+
+.page__muted {
+  opacity: 0.8;
+  font-size: 14px;
+}

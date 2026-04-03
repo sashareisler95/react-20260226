@@ -2,15 +2,30 @@
   position: relative;
 }
 
+/* Кнопка открытия */
 .cart-dd__button {
   display: inline-flex;
   align-items: baseline;
   gap: 8px;
-  border: 1px solid rgba(0,0,0,0.15);
+
+  border: 1px solid var(--border-color);
   background: transparent;
+  color: var(--text-color);
+
   padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
+
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.cart-dd__button:hover {
+  background: color-mix(in srgb, var(--text-color) 8%, transparent);
+  transform: translateY(-1px);
+}
+
+.cart-dd__button:active {
+  transform: translateY(0);
 }
 
 .cart-dd__title {
@@ -22,19 +37,31 @@
   font-size: 14px;
 }
 
+/* Панель */
 .cart-dd__panel {
   position: absolute;
   left: 0;
   top: calc(100% + 8px);
+
   width: 360px;
   max-height: 420px;
   overflow: auto;
-  background: var(--bg, #fff);
-  border: 1px solid rgba(0,0,0,0.15);
+
+  background: var(--card-bg);
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 10px;
+
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  /* Тень разная для светлой/тёмной темы */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.theme-dark .cart-dd__panel {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .cart-dd__empty {
@@ -69,16 +96,26 @@
 .cart-dd__footer {
   margin-top: 12px;
   padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,0.12);
+
+  border-top: 1px solid var(--border-color);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cart-dd__clear {
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
   background: transparent;
+
   padding: 6px 10px;
   border-radius: 8px;
   cursor: pointer;
+
+  transition: background 120ms ease;
+}
+
+.cart-dd__clear:hover {
+  background: color-mix(in srgb, var(--text-color) 10%, transparent);
 }
