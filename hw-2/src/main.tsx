@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import RestaurantPage from './components/RestaurantPage';
-import './fonts/fonts.css'
-import './main.css'
-import { ThemeContext } from './components/SwitchThemeContext/ThemeContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider as ReduxProvider } from "react-redux";
+import { BrowserRouter } from "react-router";
+import App from "./App";
+import { store } from "./app/store";
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+import "./fonts/fonts.css";
+import "./main.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 
 root.render(
-    <React.StrictMode>
-        <RestaurantPage />
-    </React.StrictMode>
+  <React.StrictMode>
+    <ReduxProvider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </ReduxProvider>
+  </React.StrictMode>
 );

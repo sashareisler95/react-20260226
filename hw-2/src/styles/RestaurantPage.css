@@ -1,0 +1,72 @@
+.rp {
+  padding: 24px;
+}
+
+.rp__header {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.rp__title {
+  margin: 0 0 14px;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.rp__nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.rp__link {
+  text-decoration: none;
+  color: var(--text-color);
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.rp__link:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--text-color) 8%, transparent);
+}
+
+.rp__stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.rp__stat {
+  min-width: 160px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.rp__statLabel {
+  display: block;
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
+.rp__statValue {
+  font-size: 22px;
+  font-weight: 700;
+}

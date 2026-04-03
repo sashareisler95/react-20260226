@@ -9,7 +9,7 @@ interface CounterProps {
 }
 
 export const Counter = ({
-  min = 1,
+  min = 0,
   max = 5,
   value,
   onValueChange

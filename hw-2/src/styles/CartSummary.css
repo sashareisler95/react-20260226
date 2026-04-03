@@ -1,0 +1,16 @@
+.cart-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  color: var(--text-color);
+}
+
+.cart-summary__title {
+  font-weight: 600;
+}
+
+.cart-summary__meta {
+  opacity: 0.8;
+  font-size: 14px;
+}
