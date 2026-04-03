@@ -78,7 +78,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onAddReview }) => {
         <span className="review-form__rating-label">Rating:</span>
         <Counter
           value={state.rating}
-          min={1}
+          min={0}
           max={5}
           onValueChange={(r) => dispatch({ type: "SET_RATING", payload: r })}
         />

@@ -34,3 +34,17 @@
 .layout__content {
     padding: 20px;
 }
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.layout-header__left,
+.layout-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

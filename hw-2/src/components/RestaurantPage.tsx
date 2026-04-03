@@ -5,7 +5,6 @@ import { Provider as ThemeProvider } from "./SwitchThemeContext/ThemeProvider";
 import { themes } from "./SwitchThemeContext/ThemeContext";
 import { ThemeType } from "../types/types";
 import { UserProvider } from "./SwitchUserContext/UserProvider";
-
 import { useAppDispatch } from "../app/hooks";
 import { usersLoaded } from "../features/users/usersSlice";
 import { dishesLoaded } from "../features/dishes/dishesSlice";

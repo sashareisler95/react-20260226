@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { Counter } from "./utils/Counter";
 import ReviewForm from "./ReviewForm";
 import { useAuth } from "./SwitchUserContext/hooks";
 import "../styles/Restaurant.css";
+import MenuItem from "./MenuItem"
 
 import { useAppDispatch } from "../app/hooks";
 import { addReview } from "../features/reviews/addReviewThunk";
 import type { Id } from "../types/entities";
-import type { RestaurantVM, DishVM, ReviewVM } from "../types/viewModels";
+import type { RestaurantVM, ReviewVM } from "../types/viewModels";
 
 const Restaurant: React.FC<{ restaurant: RestaurantVM }> = ({ restaurant }) => {
-  const [quantities, setQuantities] = useState<Map<string, number>>(new Map());
   const { isAuthenticated } = useAuth();
   const dispatch = useAppDispatch();
 
@@ -25,37 +23,18 @@ const Restaurant: React.FC<{ restaurant: RestaurantVM }> = ({ restaurant }) => {
     );
   };
 
+  
+
   return (
     <section className="restaurant-section">
       <h2 className="restaurant-name">{restaurant.name}</h2>
 
       <h3 className="section-title">Menu:</h3>
       <ul className="menu-list">
-        {restaurant.menu.map((item: DishVM) => (
-          <li key={item.id} className="menu-item">
-            <span>
-              {item.name}
-              <span className="price"> - {item.price}$</span>
-              <span className="ingredients"> ({item.ingredients.join(", ")})</span>
-            </span>
-
-            {isAuthenticated && (
-              <Counter
-                value={quantities.get(item.id) ?? 5}
-                min={1}
-                max={5}
-                onValueChange={(newQty) =>
-                  setQuantities((prev) => {
-                    const next = new Map(prev);
-                    next.set(item.id, newQty);
-                    return next;
-                  })
-                }
-              />
-            )}
-          </li>
+        {restaurant.menu.map((dish) => (
+            <MenuItem key={dish.id} dish={dish} showCounter={isAuthenticated} />
         ))}
-      </ul>
+        </ul>
 
       <h3 className="section-title">Reviews:</h3>
       <ul className="reviews-list">

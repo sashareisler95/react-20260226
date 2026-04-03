@@ -3,6 +3,7 @@ import restaurantsReducer from "../features/restaurants/restaurantsSlice";
 import dishesReducer from "../features/dishes/dishesSlice";
 import reviewsReducer from "../features/reviews/reviewsSlice";
 import usersReducer from "../features/users/usersSlice";
+import cartReducer from "../features/cart/cartSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     dishes: dishesReducer,
     reviews: reviewsReducer,
     users: usersReducer,
+    cart: cartReducer,
   },
 });
 
