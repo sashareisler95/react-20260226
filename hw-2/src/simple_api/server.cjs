@@ -1,5 +1,5 @@
 const express = require("express");
-const api = require("./api");
+const api = require("./api/index.cjs");
 const bodyParser = require("body-parser");
 const port = 3001;
 
